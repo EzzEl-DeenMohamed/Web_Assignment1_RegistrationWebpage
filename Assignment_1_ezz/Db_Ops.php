@@ -31,8 +31,10 @@ function createUsersTable($conn) {
     ";
 
     if (mysqli_query($conn, $createTableQuery)) {
+        echo "Table 'users' created successfully.\n";
         return true;
     } else {
+        echo "Error creating table: " . mysqli_error($conn) . "\n";
         return false;
     }
 }
